@@ -15,6 +15,7 @@
     "metalsmith-sass": "*",
     "metalsmith-markdown": "*",
     "metalsmith-layouts": "*",
-    "metalsmith-in-place": "*"
+    "metalsmith-in-place": "*",
+    "handlebars": "*"
   }
 }

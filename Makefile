@@ -1,2 +1,4 @@
 build:
-	@node --harmony build
+	node_modules/.bin/metalsmith
+
+.PHONY:	build
