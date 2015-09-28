@@ -3,7 +3,7 @@
   "destination": "./build/",
   "metadata": {
     "title": "Camouflage Test App",
-    "description": ""
+    "description": "A testing platform at the intersection of JS snippets and JS frameworks"
   },
   "plugins": {
     "metalsmith-layouts": {

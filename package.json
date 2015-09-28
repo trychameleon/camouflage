@@ -16,6 +16,7 @@
     "metalsmith-markdown": "*",
     "metalsmith-layouts": "*",
     "metalsmith-in-place": "*",
-    "handlebars": "*"
+    "handlebars": "*",
+    "surge": "latest"
   }
 }
