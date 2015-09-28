@@ -1,0 +1,18 @@
+{
+  "source": "./src/views/",
+  "destination": "./build/",
+  "metadata": {
+    "title": "Camouflage Test App",
+    "description": ""
+  },
+  "plugins": {
+    "metalsmith-layouts": {
+      "engine": "handlebars",
+      "directory": "./src/layouts/"
+    },
+    "metalsmith-in-place": {
+      "engine": "handlebars",
+      "directory": "./src/views/"
+    }
+  }
+}
