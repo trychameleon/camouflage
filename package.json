@@ -1,0 +1,16 @@
+{
+  "name": "camouflage",
+  "repository": "https://github.com/trychameleon/camouflage.git",
+  "version": "0.9.0",
+  "license": "MIT",
+  "description": "A testing platform at the intersection of JS snippets and JS frameworks",
+  "keywords": [
+    "JavaScript framework",
+    "JavaScript snippet"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "metalsmith": "2.x"
+  }
+}
