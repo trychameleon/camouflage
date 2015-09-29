@@ -12,11 +12,10 @@
   },
   "devDependencies": {
     "metalsmith": "2.x",
-    "metalsmith-sass": "*",
-    "metalsmith-markdown": "*",
     "metalsmith-layouts": "*",
     "metalsmith-in-place": "*",
     "handlebars": "*",
+    "myth": "*",
     "surge": "latest"
   }
 }

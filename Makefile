@@ -1,7 +1,7 @@
 all: build
 
 build:
-	node_modules/.bin/metalsmith
+	@node --harmony_generators build.js
 
 deploy: build
 	surge build camouflage.surge.sh
