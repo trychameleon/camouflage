@@ -11,11 +11,17 @@
   "dependencies": {
   },
   "devDependencies": {
-    "metalsmith": "2.x",
-    "metalsmith-layouts": "*",
-    "metalsmith-in-place": "*",
+    "bootstrap": "*",
     "handlebars": "*",
+    "jquery": "*",
+    "metalsmith": "2.x",
+    "metalsmith-assets" : "*",
+    "metalsmith-in-place": "*",
+    "metalsmith-layouts": "*",
+    "metismenu": "*",
     "myth": "*",
+    "path": "*",
+    "stat-mode": "*",
     "surge": "latest"
   }
 }
