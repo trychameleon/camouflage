@@ -1,5 +1,5 @@
 var concat = require('./plugins/concat.js'),
-    congregate = require('./plugins/congregate.js'),
+    congregate = require('@trychameleon/metalsmith-congregate'),
     assets = require('metalsmith-assets'),
     MetalsmithLayouts = require('metalsmith-layouts'),
     MetalsmithInPlace = require('metalsmith-in-place'),
@@ -25,6 +25,10 @@ var metalsmith = Metalsmith(__dirname)
   .use(congregate({
     "files": ["./node_modules/font-awesome/css/font-awesome.css"],
     "output": "./styles/"
+  }))
+  .use(assets({
+    "source": "./node_modules/bootstrap/dist/fonts/",
+    "destination": "./fonts/"
   }))
   .use(assets({
     "source": "./node_modules/font-awesome/fonts/",

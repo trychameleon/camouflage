@@ -15,13 +15,13 @@
     "handlebars": "*",
     "jquery": "*",
     "metalsmith": "2.x",
+    "@trychameleon/metalsmith-congregate": "trychameleon/metalsmith-congregate",
     "metalsmith-assets" : "*",
     "metalsmith-in-place": "*",
     "metalsmith-layouts": "*",
+    "metalsmith-serve": "*",
     "metismenu": "*",
     "myth": "*",
-    "path": "*",
-    "stat-mode": "*",
     "surge": "latest"
   }
 }
