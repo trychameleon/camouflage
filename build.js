@@ -1,9 +1,13 @@
-var concat = require('./plugins/concat.js'),
-    congregate = require('@trychameleon/metalsmith-congregate'),
+var arguments = process.argv,
     assets = require('metalsmith-assets'),
+    concat = require('./plugins/concat.js'),
+    congregate = require('@trychameleon/metalsmith-congregate'),
+    content = require('./content.json'),
     MetalsmithLayouts = require('metalsmith-layouts'),
     MetalsmithInPlace = require('metalsmith-in-place'),
-    Metalsmith = require('metalsmith');
+    Metalsmith = require('metalsmith'),
+    serve = require('metalsmith-serve'),
+    serveAssets = arguments.indexOf('-s') >= 0  || arguments.indexOf('--serve') >= 0  ? true : false;
 
 /**
  * Build.
@@ -11,10 +15,7 @@ var concat = require('./plugins/concat.js'),
 
 var metalsmith = Metalsmith(__dirname)
   .source("./assets")
-  .metadata({
-    "title": "Camouflage Test App",
-    "description": "A testing platform at the intersection of JS snippets and JS frameworks"
-  })
+  .metadata(content)
   .use(concat)
   .use(congregate({
     "files": ["./node_modules/jquery/dist/jquery.js",
@@ -42,6 +43,19 @@ var metalsmith = Metalsmith(__dirname)
     "engine": "handlebars",
     "partials": "./assets/partials/"
   }))
-  .build(function(err){
+
+  if(serveAssets){
+    metalsmith.use(serve({
+      port: 6890,
+      verbose: true,
+      http_error_files: {
+        404: "/pages/404.html"
+      }
+    }));
+  };
+
+  metalsmith.build(function(err){
     if (err) throw err;
   });
+
+
