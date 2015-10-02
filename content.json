@@ -1,9 +1,4 @@
 {
   "title": "Camouflage Test App",
-  "description": "A testing platform at the intersection of JS snippets and JS frameworks",
-  "pages": {
-    "dashboard": {
-      "name": "dashboard"
-    }
-  }
+  "description": "A testing platform at the intersection of JS snippets and JS frameworks"
 }

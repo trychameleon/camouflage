@@ -1,0 +1,42 @@
+{{> header }}
+
+<body>
+
+<div id="wrapper">
+  {{> navigation }}
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">CSS Applicator</h1>
+                    </div>
+                  <div class="col-lg-12">
+                    <form role="form">
+                      <div class="form-group">
+                        <label>CSS URL</label>
+                        <input class="form-control" name="cssURL" placeholder="Enter the URL of the CSS you'd like to apply to the page here">
+                      </div>
+                      <div class="form-group">
+                        <input type="button" value="Load" onclick="CSSApp.applyCSS()">
+                      </div>
+                    </form>
+                  </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+  {{> footerjs }}
+
+</body>
+
+<script src="/scripts/cssapplicator.js"></script>
+</html>
