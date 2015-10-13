@@ -1,13 +1,13 @@
 all: build
 
 build:
-	@node --harmony_generators build.js
+	@node --harmony build.js
 
 deploy:
 	surge build camouflage.surge.sh
 
 serve:
-	@node --harmony_generators build.js -s
+	@node --harmony build.js -s
 
 .PHONY:	build
 .PHONY:	deploy

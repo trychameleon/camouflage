@@ -11,7 +11,7 @@ make build
 ### Serving Locally
 ```bash
 make serve
-# open web browser http://localhost:6890/
+# open web browser to [http://localhost:6890/](http://localhost:6890/)
 ```
 
 ### Deploy
