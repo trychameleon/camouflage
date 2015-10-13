@@ -6,7 +6,12 @@
 npm install
 npm install -g surge
 make build
-# open web browser to build/views/index.html
+```
+
+### Serving Locally
+```bash
+make serve
+# open web browser http://localhost:6890/
 ```
 
 ### Deploy

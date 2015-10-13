@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "bootstrap": "*",
+    "font-awesome": "*",
     "handlebars": "*",
     "jquery": "*",
     "metalsmith": "2.x",
