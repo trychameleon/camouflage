@@ -15,6 +15,7 @@
     "handlebars": "*",
     "jquery": "*",
     "metalsmith": "2.x",
+    "font-awesome": "*",
     "@trychameleon/metalsmith-congregate": "trychameleon/metalsmith-congregate",
     "metalsmith-assets" : "*",
     "metalsmith-in-place": "*",
