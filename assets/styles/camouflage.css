@@ -1,0 +1,9 @@
+.generated-number {
+    display: inline-block;
+    width: 70px;
+    border: 1px solid #ccc;
+    height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 3px;
+}

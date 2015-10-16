@@ -1,0 +1,84 @@
+{{> header }}
+
+<body>
+
+<div id="wrapper">
+  {{> navigation }}
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">User Identification</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Basic Form Elements
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                              <form role="form" id="useridentification">
+                                <div class="col-lg-6">
+                                      <div class="form-group">
+                                        <input name="name" class="form-control" placeholder="First Name">
+                                      </div>
+                                      <div class="form-group">
+                                        <input name="email" class="form-control" placeholder="Email">
+                                      </div>
+                                      <div class="form-group">
+                                        <input name="color" class="form-control" placeholder="Favorite Color">
+                                      </div>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                      <label>Birth Month</label>
+                                      <select name="birthmonth" class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Random Number</label>
+                                      <input name="randomnumber" class="generated-number randomnumber-text"></input>
+                                      <button type="button" class="btn" onclick="return useridentification.generateRandomNumber();">Generate</button>
+                                    </div>
+                                    <button class="btn btn-default" onclick="return useridentification.save(true);">Save</button>
+                                </div>
+                               </form>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+{{> footerjs }}
+
+</body>
+
+</html>
