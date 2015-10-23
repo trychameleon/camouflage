@@ -9,16 +9,17 @@ var getFormData = function($form){
     return indexed_array;
   },
   useridentification = {
+    localStorageName: 'camouflageuser',
     init: function(){
       var store = {};
-      if(store = localStorage.getItem("camouflageuser")){
+      if(store = localStorage.getItem(this.localStorageName)){
         if(JSON.parse(store).loggedin) this.populate(JSON.parse(store));
       }
     },
     save: function(loggedin){
       var formData = getFormData($("#useridentification"));
       formData.loggedin = loggedin;
-      localStorage.setItem("camouflageuser",  JSON.stringify(formData));
+      localStorage.setItem(this.localStorageName,  JSON.stringify(formData));
     },
     populate: function(localstorageobject){
       for(var index in localstorageobject) {
@@ -69,6 +70,5 @@ var getFormData = function($form){
       });
     }
   };
-
 useridentification.init();
 turbolinks.init();
