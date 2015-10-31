@@ -32,9 +32,7 @@ var getFormData = function($form){
       if(localstorageobject.name && localstorageobject.name.length
         && localstorageobject.randomnumber && localstorageobject.randomnumber.length
         && chmln && chmln.identify){
-        window.setTimeout(function() {
           chmln.identify({uid: localstorageobject.name + '&' + localstorageobject.randomnumber})
-        }, 750);
       }
     },
     generateRandomNumber: function(){
