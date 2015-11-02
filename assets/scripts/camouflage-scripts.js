@@ -17,7 +17,7 @@ var getFormData = function($form){
       }
     },
     save: function(loggedin){
-      var formData = getFormData($("#useridentification"));
+      var formData = getFormData($('#useridentification'));
       formData.loggedin = loggedin;
       localStorage.setItem(this.localStorageName,  JSON.stringify(formData));
     },
@@ -26,8 +26,13 @@ var getFormData = function($form){
         if (localstorageobject.hasOwnProperty(index)) {
           var stored = localstorageobject[index];
           $('[name=' + index + ']').val(stored);
-          $("." + index + '-text').text(stored);
+          $('.' + index + '-text').text(stored);
         }
+      }
+      if(localstorageobject.name && localstorageobject.name.length
+        && localstorageobject.randomnumber && localstorageobject.randomnumber.length
+        && chmln && chmln.identify){
+          chmln.identify({uid: localstorageobject.name + '&' + localstorageobject.randomnumber})
       }
     },
     generateRandomNumber: function(){
@@ -60,12 +65,12 @@ var getFormData = function($form){
       localStorage.setItem(this.localStorageName,  on);
     },
     turbolinksEnabled: function() {
-      return localStorage.getItem(this.localStorageName) === "true";
+      return localStorage.getItem(this.localStorageName) === 'true';
     },
     linkHandler: function(event){
       event.preventDefault();
       var address = event.target.getAttribute('href');
-      $("body").load(address, function(){
+      $('body').load(address, function(){
         $(window).trigger('resize');
       });
     }
