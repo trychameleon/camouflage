@@ -32,7 +32,15 @@ var getFormData = function($form){
       if(localstorageobject.name && localstorageobject.name.length
         && localstorageobject.randomnumber && localstorageobject.randomnumber.length
         && chmln && chmln.identify){
-          chmln.identify({uid: localstorageobject.name + '&' + localstorageobject.randomnumber})
+
+        this.addChmlnIdentity(localstorageobject.name + '-' + localstorageobject.randomnumber, localstorageobject);
+      }
+    },
+    addChmlnIdentity: function(identity, userdata){
+      userdata = $.extend({uid: identity} || {}, userdata);
+      chmln.identify({uid: userdata});
+      if(window.location.hash == ""){
+        window.location.hash = identity;
       }
     },
     generateRandomNumber: function(){
