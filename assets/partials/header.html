@@ -29,6 +29,32 @@
 
   <script src="/scripts/appintegration.js"></script>
 
-  <script>/* Chameleon - better user onboarding */!function(t,o,a){var n="chmln",e="setup identify alias track set show on off custom help _data".split(" "),c="https://fast.trychameleon.com/messo/"+a+"/messo.min.js",s=o.localStorage&&o.localStorage.getItem(n+":messo-url");o[n]||(o[n]={}),o[n].accountToken=a,o[n].location=window.location.toString();for(var i=0;i<e.length;i++)!function(){var t=o[n][e[i]+"_a"]=[];o[n][e[i]]=function(){t.push(arguments)}}();var l=t.createElement("script");l.src=s||c,l.async=!0,t.head.appendChild(l)}(document,window,"Sxj6nnShTett38sjDkjwvZdYqqWUkS5FcBWFKaZclf3UjllBG7rdUWQ89cQNt-y2kSnF1rXIIPlRUk");</script>
+  <script>(function(doc,win,accountToken) {
+    var chmln = 'chmln',
+        names = 'setup identify alias track set show on off custom help _data'.split(' '),
+        src = 'http://localhost:3278/messo/'+accountToken+'/messo.min.js',
+        localSrc = win.localStorage && win.localStorage.getItem(chmln+':messo-url');
+
+    win[chmln] || (win[chmln] = {});
+    win[chmln].accountToken = accountToken;
+    win[chmln].location = window.location.toString();
+
+    for(var i = 0; i<names.length; i++) {
+      (function() {
+        var calls = win[chmln][names[i]+'_a'] = [];
+        win[chmln][names[i]] = function() {
+          calls.push(arguments);
+        };
+      })();
+    }
+
+    // TODO we need a way to trigger a refresh of ALL account's messo.min.js file when the code structure of messo.min.js changes
+
+    var script = doc.createElement('script');
+    script.src = localSrc || src;
+    script.async = true;
+    doc.head.appendChild(script);
+  })(document,window,'SXzPbZnXFxL6yHC7yS8PEYTs5tzxJA28vJpLIazSdbZGLopnyGxhkAriYUg4');
+  </script>
 
 </head>

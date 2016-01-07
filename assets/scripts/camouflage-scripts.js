@@ -38,7 +38,7 @@ var getFormData = function($form){
     },
     addChmlnIdentity: function(identity, userdata){
       userdata = $.extend({uid: identity} || {}, userdata);
-      chmln.identify({uid: userdata});
+      chmln.identify({uid: userdata.name + '-' + userdata.randomnumber});
       if(window.location.hash == ""){
         window.location.hash = identity;
       }
