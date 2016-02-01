@@ -24,6 +24,42 @@
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+  <script>
+  (function(doc,win,accountToken) {
+  var chmln = 'chmln',
+    names = 'setup identify alias track set show on off custom help _data'.split(' '),
+    src = 'http://localhost:3278/messo/'+accountToken+'/messo.min.js',
+    localSrc = win.localStorage && win.localStorage.getItem(chmln+':messo-url');
+
+  win[chmln] || (win[chmln] = {});
+  win[chmln].accountToken = accountToken;
+
+  for(var i = 0; i<names.length; i++) {
+    (function() {
+      var calls = win[chmln][names[i]+'_a'] = [];
+      win[chmln][names[i]] = function() {
+        calls.push(arguments);
+      };
+    })();
+  }
+
+  // TODO we need a way to trigger a refresh of ALL account's messo.min.js file when the code structure of messo.min.js changes
+
+  var script = doc.createElement('script');
+  script.src = localSrc || src;
+  script.async = true;
+  doc.head.appendChild(script);
+})(document,window,'SL2u7LENi0XUUzSkWhRBmYGqQhL4C6UQTmcRcpBYhWzEkKPLrE9KZVOvQU1qY');
+  </script>
+
+  <!-- Segment snippet -->
+  <script type="text/javascript">
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+  analytics.load("3sTUuWQ5KOQsE5S8elcrfu6mqRzxJky5");
+  analytics.page()
+  }}();
+  </script>
+
   <!-- jQuery -->
   <script src="/scripts/jquery.js"></script>
 
