@@ -29,16 +29,15 @@ var getFormData = function($form){
           $('.' + index + '-text').text(stored);
         }
       }
-      if(localstorageobject.name && localstorageobject.name.length
-        && localstorageobject.randomnumber && localstorageobject.randomnumber.length
-        && chmln && chmln.identify){
-
-        this.addChmlnIdentity(localstorageobject.name + '-' + localstorageobject.randomnumber, localstorageobject);
+      if(localstorageobject.name && localstorageobject.name.length && localstorageobject.randomnumber && localstorageobject.randomnumber.length) {
+        this.identify(localstorageobject.name + '-' + localstorageobject.randomnumber, localstorageobject);
       }
     },
-    addChmlnIdentity: function(identity, userdata){
-      userdata = $.extend({uid: identity} || {}, userdata);
-      chmln.identify({uid: userdata.name + '-' + userdata.randomnumber});
+    identify: function(identity, userdata) {
+      userdata = $.extend({ uid: identity }, userdata);
+      window.chmln && chmln.identify(userdata);
+      window.analytics && analytics.identify(identity, userdata);
+
       if(window.location.hash == ""){
         window.location.hash = identity;
       }
