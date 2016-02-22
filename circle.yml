@@ -7,5 +7,6 @@ deployment:
     commands:
       - make release
   test:
+    branch: master
     override:
       - exit 0
