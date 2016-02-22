@@ -6,7 +6,3 @@ deployment:
     branch: master
     commands:
       - make release
-  test:
-    branch: master
-    override:
-      - exit 0

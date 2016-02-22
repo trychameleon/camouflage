@@ -8,6 +8,8 @@ build:
 deploy:
 	surge build camouflage.surge.sh
 
+test:
+
 serve:
 	@node --harmony build.js -s
 
