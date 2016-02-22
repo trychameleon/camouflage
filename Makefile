@@ -1,5 +1,7 @@
 all: build
 
+release: build deploy
+
 build:
 	@node --harmony build.js
 
@@ -9,6 +11,7 @@ deploy:
 serve:
 	@node --harmony build.js -s
 
+.PHONY:	release
 .PHONY:	build
 .PHONY:	deploy
 .PHONY:	serve
