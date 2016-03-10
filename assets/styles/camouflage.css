@@ -7,3 +7,11 @@
     text-align: center;
     padding: 3px;
 }
+
+.page-scroll-wrapper {
+    position: absolute !important;
+    height: 100% !important;
+    bottom: 0 !important;
+    padding-top: 51px !important;
+    overflow: auto !important;
+}
