@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .generated-number {
     display: inline-block;
     width: 70px;
@@ -14,4 +16,154 @@
     bottom: 0 !important;
     padding-top: 51px !important;
     overflow: auto !important;
+}
+
+#intercom-container {
+    position: fixed;
+    width: 100px !important;
+    height: 100px !important;
+    bottom: 0px;
+    left: 0px;
+    z-index: 2147483647;
+    background: purple;
+}
+
+@font-face {
+    font-family: "rectang";
+    src:url("../fonts/rectang.eot");
+    src:url("../fonts/rectang.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/rectang.woff") format("woff"),
+    url("../fonts/rectang.ttf") format("truetype"),
+    url("../fonts/rectang.svg#rectang") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body div#foliagecontrols {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 5px;
+    color: gray;
+    opacity: 0.4;
+}
+
+body div#foliagecontrols input {
+    float: left;
+    margin-right: 5px;
+}
+
+body.foliage #wrapper {
+    font-family: "rectang" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.35em;
+}
+
+body.foliage input {
+    letter-spacing: -0.35em;
+}
+
+body.foliage h1 {
+    color: gray !important;
+}
+
+body.foliage h1,
+body.foliage nav.navbar {
+    letter-spacing: -0.45em
+}
+
+body.foliage i {
+    color: grey !important;
+}
+
+body.foliage i,
+body.foliage nav.i {
+    letter-spacing: 0;
+}
+
+body.foliage h2,
+body.foliage h3,
+body.foliage h4,
+body.foliage h5,
+body.foliage h6,
+body.foliage button,
+body.foliage textarea {
+    letter-spacing: -0.5em
+}
+
+body.foliage a {
+    color: darkgrey !important;
+}
+
+body.foliage .panel.panel-primary,
+body.foliage .panel.panel-primary .panel-heading,
+body.foliage .panel.panel-green,
+body.foliage .panel.panel-green .panel-heading,
+body.foliage .panel.panel-red,
+body.foliage .panel.panel-red .panel-heading,
+body.foliage .panel.panel-yellow,
+body.foliage .panel.panel-yellow .panel-heading {
+    border-color: grey !important;
+}
+
+body.foliage .panel.panel-primary .panel-heading,
+body.foliage .panel.panel-green,
+body.foliage .panel.panel-green .panel-heading,
+body.foliage .panel.panel-red,
+body.foliage .panel.panel-red .panel-heading,
+body.foliage .panel.panel-yellow,
+body.foliage .panel.panel-yellow .panel-heading {
+    background-color: grey !important;
+}
+
+
+body.foliage .timeline-badge,
+body.foliage .btn {
+    background-color: gray !important;
+    border-color: gray !important;
+}
+
+
+body.foliage .chat-img {
+    background-color: gray !important;
+    border-radius: 50%;
+}
+
+body.foliage .chat-img img{
+    opacity: 0;
+}
+
+body.foliage svg,
+body.foliage svg rect,
+body.foliage svg circle,
+body.foliage svg path,
+body.foliage svg g path {
+    background-color: lightgray !important;
+    fill: lightgray !important;
+    stroke: lightgray !important;
+    border-color: lightgray !important;
+}
+
+body.foliage svg circle,
+body.foliage svg path,
+body.foliage svg g path {
+    background-color: gray !important;
+    fill: gray !important;
+    stroke: gray !important;
+    border-color: gray !important;
+}
+
+body.foliage svg path,
+body.foliage svg g path {
+    background-color: darkgrey !important;
+    fill: darkgrey !important;
+    stroke: darkgrey !important;
+    border-color: darkgrey !important;
 }
