@@ -13,6 +13,18 @@ var arguments = process.argv,
  * Build.
  */
 
+process.argv.forEach(function (val, index, array) {
+  var kv = val.split('=');
+  switch (kv[0]) {
+    case 'title':
+      content.title = content.title + " " + kv[1];
+      break;
+    case 'chameleon_token':
+      content.chameleon_token = kv[1];
+      break;
+  }
+});
+
 var metalsmith = Metalsmith(__dirname)
   .source("./assets")
   .metadata(content)
@@ -41,8 +53,8 @@ var metalsmith = Metalsmith(__dirname)
   }))
   .use(MetalsmithInPlace({
     "engine": "handlebars",
-    "partials": "./assets/partials/"
-  }))
+    "partials": "./assets/partials/",
+  }));
 
   if(serveAssets){
     metalsmith.use(serve({
