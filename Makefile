@@ -3,7 +3,7 @@ all: build
 release: build deploy
 
 build:
-	@node --harmony build.js
+	@node --harmony build.js chameleon_token="Sxj6nnShTett38sjDkjwvZdYqqWUkS5FcBWFKaZclf3UjllBG7rdUWQ89cQNt-y2kSnF1rXIIPlRUk"
 
 build_dev:
 	@node --harmony build.js title=Dev chameleon_token="STBvCDdzXuUhyK1kPoJbdAoMp3kyTa4J3yyl2HKKBXjhRQ-1CyHoj-zEaRfmoLqLJzINvF"
