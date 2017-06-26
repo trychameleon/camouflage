@@ -17,6 +17,9 @@ build_v4:
 build_v5:
 	@node --harmony build.js title=V5 chameleon_token="Szg9TtjsTTRMWzurHqsMqGQ72ObNM4KUJQDes5fdfb2d1y-1CyPJo-zEdOyeYm734HzwfZ"
 
+build_bugfix:
+	@node --harmony build.js title=Bugfix chameleon_token="S2SUo4WAVp4wqaju67PEHDdZLCdrt0AFgIpMcgUX9F2RXC-1DlgG5-zVolxwAW0el5RHLA"
+
 deploydemo: build
 	surge build camouflage.surge.sh
 
@@ -32,7 +35,10 @@ deployv4: build_v4
 deployv5: build_v5
 	surge build camouflage-v5.surge.sh
 
-deploy: deploydemo deploydev deployv3 deployv4 deployv5
+deploybugfix: build_bugfix
+	surge build camouflage-bugfix.surge.sh
+
+deploy: deploydemo deploydev deployv3 deployv4 deployv5 deploybugfix
 
 test:
 
