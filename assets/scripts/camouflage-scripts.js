@@ -26,11 +26,11 @@ var getFormData = function($form){
         if (localstorageobject.hasOwnProperty(index)) {
           var stored = localstorageobject[index];
           stored == 'on' && !!$('[name=' + index + ']').prop('checked', true) && (localstorageobject[index] = true);
-          stored == 'off' && !!$('[name=' + index + ']').prop('checked', false) && (localstorageobject[index] = false);
           $('[name=' + index + ']').val(stored);
           $('.' + index + '-text').text(stored);
         }
       }
+      localstorageobject.disabled = localstorageobject.disabled || false;
       if(localstorageobject.name && localstorageobject.name.length && localstorageobject.randomnumber && localstorageobject.randomnumber.length) {
         this.identify(localstorageobject.name + '-' + localstorageobject.randomnumber, localstorageobject);
       }
