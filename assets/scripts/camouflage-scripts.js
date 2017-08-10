@@ -17,22 +17,41 @@ var getFormData = function($form){
       }
     },
     save: function(loggedin){
-      var formData = getFormData($('#useridentification'));
+      var formData = getFormData($('#identification'));
       formData.loggedin = loggedin;
       localStorage.setItem(this.localStorageName,  JSON.stringify(formData));
     },
     populate: function(localstorageobject){
-      for(var index in localstorageobject) {
-        if (localstorageobject.hasOwnProperty(index)) {
-          var stored = localstorageobject[index];
-          stored == 'on' && !!$('[name=' + index + ']').prop('checked', true) && (localstorageobject[index] = true);
-          $('[name=' + index + ']').val(stored);
+      var data = localstorageobject, userdata = {}, groupdata = {}, groupuid;
+
+      data.segmentgroup = data.segmentgroup || 'disabled';
+      for(var index in data) {
+        if (data.hasOwnProperty(index)) {
+          var stored = data[index];
+          stored == 'on' && !!$('[name=' + index + ']').prop('checked', true) && (data[index] = true);
+          $('[name=' + index + ']').is('[type=radio]') ? $('[name=' + index + ']').filter('[value='+stored+']').prop('checked', true) : $('[name=' + index + ']').val(stored);
           $('.' + index + '-text').text(stored);
+          if(/group\_/.test(index)){
+            groupdata[index.replace('group_','')] = stored;
+          } else if(/user\_/.test(index)){
+            userdata[index.replace('user_','')] = stored;
+          }
         }
       }
-      localstorageobject.disabled = localstorageobject.disabled || false;
-      if(localstorageobject.name && localstorageobject.name.length && localstorageobject.randomnumber && localstorageobject.randomnumber.length) {
-        this.identify(localstorageobject.name + '-' + localstorageobject.randomnumber, localstorageobject);
+      userdata.disabled = userdata.disabled || false;
+      groupdata.important = groupdata.important || false;
+      groupuid = groupdata.name + '-' + groupdata.randomnumber;
+
+      if(userdata.name && userdata.name.length && userdata.randomnumber && userdata.randomnumber.length) {
+        if(groupdata.name && groupdata.plan && groupdata.randomnumber && groupdata.created) {
+          if(data.segmentgroup == 'enabled') {
+            window.analytics && window.analytics.group(groupuid, groupdata);
+          } else {
+            groupdata.uid = groupuid;
+            userdata.company = groupdata;
+          }
+        }
+        this.identify(userdata.name + '-' + userdata.userrandomnumber, userdata);
       }
     },
     identify: function(identity, userdata) {
@@ -44,8 +63,8 @@ var getFormData = function($form){
         window.location.hash = identity;
       }
     },
-    generateRandomNumber: function(){
-      $('[name=randomnumber]').val(Math.floor(Math.random() * 10000));
+    generateRandomNumber: function(name){
+      $('[name=' + name + 'randomnumber]').val(Math.floor(Math.random() * 10000));
       return false;
     }
   };
