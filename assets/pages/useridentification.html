@@ -12,69 +12,119 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
-            <div class="row">
+            <form role="form" id="identification">
+              <!-- /.row -->
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="panel panel-default" id="userid">
+                          <div class="panel-heading">
+                              User Attributes
+                          </div>
+                          <div class="panel-body">
+                              <div class="row">
+                                  <div class="col-lg-6">
+                                        <div class="form-group">
+                                          <input name="user_name" class="form-control" placeholder="First Name">
+                                        </div>
+                                        <div class="form-group">
+                                          <input name="user_email" class="form-control" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                          <input name="user_color" class="form-control" placeholder="Favorite Color">
+                                        </div>
+                                  </div>
+                                  <!-- /.col-lg-6 (nested) -->
+                                  <div class="col-lg-6">
+                                      <div class="form-group">
+                                        <label>Birth Month</label>
+                                        <select name="user_birthmonth" class="form-control">
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                          <option>8</option>
+                                          <option>9</option>
+                                          <option>10</option>
+                                          <option>11</option>
+                                          <option>12</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Disabled</label>
+                                        <input type="checkbox" name="disabled"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Random Number</label>
+                                        <input name="user_randomnumber" class="generated-number randomnumber-text"/>
+                                        <button type="button" class="btn" onclick="return useridentification.generateRandomNumber('user_');">Generate</button>
+                                      </div>
+                                      <button class="btn btn-default" onclick="return useridentification.save(true);">Save</button>
+                                  </div>
+                                  <!-- /.col-lg-6 (nested) -->
+                              </div>
+                              <!-- /.row (nested) -->
+                          </div>
+                          <!-- /.panel-body -->
+                      </div>
+                      <!-- /.panel -->
+                  </div>
+                  <!-- /.col-lg-12 -->
+              </div>
+              <!-- /.row -->
+              <div class="row">
                 <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Basic Form Elements
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                              <form role="form" id="useridentification">
-                                <div class="col-lg-6">
-                                      <div class="form-group">
-                                        <input name="name" class="form-control" placeholder="First Name">
-                                      </div>
-                                      <div class="form-group">
-                                        <input name="email" class="form-control" placeholder="Email">
-                                      </div>
-                                      <div class="form-group">
-                                        <input name="color" class="form-control" placeholder="Favorite Color">
-                                      </div>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                      <label>Birth Month</label>
-                                      <select name="birthmonth" class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                      </select>
-                                    </div>
-                                    <div class="form-group">
-                                      <label>Disabled</label>
-                                      <input type="checkbox" name="disabled"/>
-                                    </div>
-                                    <div class="form-group">
-                                      <label>Random Number</label>
-                                      <input name="randomnumber" class="generated-number randomnumber-text"></input>
-                                      <button type="button" class="btn" onclick="return useridentification.generateRandomNumber();">Generate</button>
-                                    </div>
-                                    <button class="btn btn-default" onclick="return useridentification.save(true);">Save</button>
-                                </div>
-                               </form>
-                                <!-- /.col-lg-6 (nested) -->
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
+                  <div class="panel panel-default" id="groupid">
+                    <div class="panel-heading">
+                      Group Attributes
                     </div>
-                    <!-- /.panel -->
+                    <div class="panel-body">
+                      <div class="row">
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label>Send group with Segment</label>
+                              <label for="segmentgroupon">on</label>
+                              <input id="segmentgroupon" type="radio" name="segmentgroup" value="enabled"/>
+                              <label for="segmentgroupoff">off</label>
+                              <input id="segmentgroupoff" type="radio" name="segmentgroup" value="disabled"/>
+                            </div>
+                            <div class="form-group">
+                              <input name="group_name" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                              <input name="group_plan" type="number" class="form-control" placeholder="Plan">
+                            </div>
+                            <div class="form-group">
+                              <label>ID</label>
+                              <input name="group_randomnumber" class="generated-number randomnumber-text"/>
+                              <button type="button" class="btn" onclick="return useridentification.generateRandomNumber('group_');">Generate</button>
+                            </div>
+                          </div>
+                          <!-- /.col-lg-6 (nested) -->
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <input name="group_created" type="date" value="2017-06-01">
+                            </div>
+                            <div class="form-group">
+                              <label>Important</label>
+                              <input type="checkbox" name="group_important"/>
+                            </div>
+                            <button class="btn btn-default" onclick="return useridentification.save(true);">Save</button>
+                          </div>
+                        <!-- /.col-lg-6 (nested) -->
+                      </div>
+                      <!-- /.row (nested) -->
+                    </div>
+                    <!-- /.panel-body -->
+                  </div>
+                  <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
+              </div>
+              <!-- /.row -->
+            </form>
         </div>
         <!-- /#page-wrapper -->
 
