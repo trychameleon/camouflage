@@ -51,7 +51,7 @@ var getFormData = function($form){
             userdata.company = groupdata;
           }
         }
-        this.identify(userdata.name + '-' + userdata.userrandomnumber, userdata);
+        this.identify(userdata.name + '-' + userdata.randomnumber, userdata);
       }
     },
     identify: function(identity, userdata) {
