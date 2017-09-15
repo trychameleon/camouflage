@@ -1,7 +1,15 @@
-{{> header }}
-{{> scripts }}
+<!DOCTYPE html>
+<html lang="en">
 
-<body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="Content-Security-Policy" content="default-src *; object-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:* http://*.getdrip.com http://*.cloudfront.net http://*.google-analytics.com http://*.hs-scripts.com https://*.hscollectedforms.net http://*.segment.com http://*.mxpnl.com http://*.hubspot.com https://js.hscollectedforms.net https://*.usemessages.com http://*.hs-analytics.net https://*.google-analytics.com https://*.hubspot.com https://*.cloudfront.net https://*.fullstory.com https://*.trychameleon.com https://*.chmln-cdn.com; style-src 'self' 'unsafe-inline' https://*.trychameleon.com https://*.chmln-cdn.com https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://*.trychameleon.com https://*.chmln-cdn.com data: https://*.trychameleon.com https://*.chmln-cdn.com https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' https://*.surge.sh http://*.google-analytics.com http://*.hubspot.com https://*.hubspot.com http://placehold.it https://*.chmln-cdn.com data: https://s3.amazonaws.com https://www.google-analytics.com https://*.trychameleon.com https://*.chmln-cdn.com;">
+
+  {{> scripts }}
 
 <div id="wrapper">
   {{> navigation }}
@@ -9,7 +17,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Tables</h1>
+                    <h1 class="page-header">CSP testing page</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

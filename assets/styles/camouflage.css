@@ -56,16 +56,16 @@ body.foliage #wrapper {
     letter-spacing: -0.35em;
 }
 
-body.foliage input {
+body.foliage :not('#chmln-dom') input {
     letter-spacing: -0.35em;
 }
 
-body.foliage h1 {
+body.foliage :not('#chmln-dom') h1 {
     color: gray !important;
 }
 
-body.foliage h1,
-body.foliage nav.navbar {
+body.foliage :not('#chmln-dom') h1,
+body.foliage :not('#chmln-dom') nav.navbar {
     letter-spacing: -0.45em
 }
 
@@ -78,13 +78,13 @@ body.foliage nav.i {
     letter-spacing: 0;
 }
 
-body.foliage h2,
-body.foliage h3,
-body.foliage h4,
-body.foliage h5,
-body.foliage h6,
-body.foliage button,
-body.foliage textarea {
+body.foliage div:not('#chmln-dom') h2,
+body.foliage div:not('#chmln-dom') h3,
+body.foliage div:not('#chmln-dom') h4,
+body.foliage div:not('#chmln-dom') h5,
+body.foliage div:not('#chmln-dom') h6,
+body.foliage div:not('#chmln-dom') button,
+body.foliage div:not('#chmln-dom') textarea {
     letter-spacing: -0.5em
 }
 
@@ -130,20 +130,20 @@ body.foliage .chat-img img{
     opacity: 0;
 }
 
-body.foliage svg,
-body.foliage svg rect,
-body.foliage svg circle,
-body.foliage svg path,
-body.foliage svg g path {
+body.foliage div:not('#chmln-dom') svg,
+body.foliage div:not('#chmln-dom') svg rect,
+body.foliage div:not('#chmln-dom') svg circle,
+body.foliage div:not('#chmln-dom') svg path,
+body.foliage div:not('#chmln-dom') svg g path {
     background-color: lightgray !important;
     fill: lightgray !important;
     stroke: lightgray !important;
     border-color: lightgray !important;
 }
 
-body.foliage svg circle,
-body.foliage svg path,
-body.foliage svg g path {
+body.foliage div:not('#chmln-dom') svg circle,
+body.foliage div:not('#chmln-dom') svg path,
+body.foliage div:not('#chmln-dom') svg g path {
     background-color: gray !important;
     fill: gray !important;
     stroke: gray !important;
@@ -156,4 +156,10 @@ body.foliage svg g path {
     fill: darkgrey !important;
     stroke: darkgrey !important;
     border-color: darkgrey !important;
+}
+
+
+.fa-comments:hover {
+    transform: scale(2);
+    transition: all 3s;
 }
