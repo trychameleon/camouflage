@@ -8,6 +8,9 @@ build:
 build_dev:
 	@node --harmony build.js title=Dev chameleon_token="STBvCDdzXuUhyK1kPoJbdAoMp3kyTa4J3yyl2HKKBXjhRQ-1CyHoj-zEaRfmoLqLJzINvF"
 
+build_v2:
+	@node --harmony build.js title=V2 chameleon_token="SJOwmcol9DOKKkQkMiMzz8JiHVtu0LcHRAiPvPgqPfRZuX-1EfKUb-AfpS5LthlVwcV2LV"
+
 build_v3:
 	@node --harmony build.js title=V3 chameleon_token="Sqhgo78fnLur3tBEXeYRslqGMtJVxyZsQJm0lpLEPsHDnX-1CyJsf-zEbABdMkEIopiokS"
 
@@ -25,6 +28,9 @@ deploydemo: build
 
 deploydev: build_dev
 	surge build camouflage-dev.surge.sh
+
+deployv2: build_v2
+	surge build camouflage-v2.surge.sh
 
 deployv3: build_v3
 	surge build camouflage-v3.surge.sh
